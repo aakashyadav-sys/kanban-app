@@ -6,7 +6,7 @@ import { KanbanBoard } from './components/KanbanBoard';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'red'} />
+      <StatusBar backgroundColor={'#3B82F6'} />
       <Header />
       <KanbanBoard />
     </SafeAreaView>
