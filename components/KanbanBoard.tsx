@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, TextInput, ActivityIndicator } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import  Ionicons  from 'react-native-vector-icons/AntDesign';
+import  Icons  from 'react-native-vector-icons/AntDesign';
 import { useKanbanStore } from '../store/kanbanStore';
 import { KanbanColumn } from './KanbanColumn';
 
 const colorOptions = [
-  { value: '#3B82F6', name: 'Blue' },
-  { value: '#10B981', name: 'Green' },
-  { value: '#EAB308', name: 'Yellow' },
-  { value: '#EF4444', name: 'Red' },
-  { value: '#8B5CF6', name: 'Purple' },
-  { value: '#EC4899', name: 'Pink' },
-  { value: '#6366F1', name: 'Indigo' },
-  { value: '#14B8A6', name: 'Teal' },
+  { colorCode: '#3B82F6', name: 'Blue' },
+  { colorCode: '#10B981', name: 'Green' },
+  { colorCode: '#EAB308', name: 'Yellow' },
+  { colorCode: '#EF4444', name: 'Red' },
+  { colorCode: '#8B5CF6', name: 'Purple' },
+  { colorCode: '#EC4899', name: 'Pink' },
+  { colorCode: '#6366F1', name: 'Indigo' },
+  { colorCode: '#14B8A6', name: 'Teal' },
 ];
 
 export const KanbanBoard: React.FC = () => {
@@ -70,7 +70,7 @@ export const KanbanBoard: React.FC = () => {
             style={styles.addColumnButton}
             onPress={() => setIsAddingColumn(true)}
           >
-            <Ionicons name="add" size={24} color="#6B7280" />
+            <Icons name="plus" size={24} color="#6B7280" />
             <Text style={styles.addColumnText}>Add Column</Text>
           </TouchableOpacity>
         </ScrollView>
@@ -81,7 +81,7 @@ export const KanbanBoard: React.FC = () => {
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>Add New Column</Text>
             <TouchableOpacity onPress={handleCancel}>
-              <Ionicons name="close" size={24} color="#6B7280" />
+              <Icons name="close" size={24} color="#6B7280" />
             </TouchableOpacity>
           </View>
           
@@ -102,13 +102,13 @@ export const KanbanBoard: React.FC = () => {
               <View style={styles.colorSelector}>
                 {colorOptions.map((color) => (
                   <TouchableOpacity
-                    key={color.value}
+                    key={color.colorCode}
                     style={[
                       styles.colorOption,
-                      { backgroundColor: color.value },
-                      newColumnColor === color.value && styles.colorOptionSelected
+                      { backgroundColor: color.colorCode },
+                      newColumnColor === color.colorCode && styles.colorOptionSelected
                     ]}
-                    onPress={() => setNewColumnColor(color.value)}
+                    onPress={() => setNewColumnColor(color.colorCode)}
                   />
                 ))}
               </View>

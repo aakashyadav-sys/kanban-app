@@ -73,10 +73,10 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({ card }) => {
           </Text>
           <View style={styles.cardActions}>
             <TouchableOpacity onPress={() => setIsEditing(true)} style={styles.actionButton}>
-              <Ionicons name="pencil" size={14} color="#6B7280" />
+              <Ionicons name="edit" size={14} color="#6B7280" />
             </TouchableOpacity>
             <TouchableOpacity onPress={handleDelete} style={styles.actionButton}>
-              <Ionicons name="trash" size={14} color="#EF4444" />
+              <Ionicons name="delete" size={14} color="#EF4444" />
             </TouchableOpacity>
           </View>
         </View>

@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
         <View style={styles.content}>
           <View style={styles.leftSection}>
             <View style={styles.iconContainer}>
-              <Ionicons name="grid-outline" size={24} color="white" />
+              <Ionicons name="dashboard" size={24} color="white" />
             </View>
             <View style={styles.titleContainer}>
               <Text style={styles.title}>Project Board</Text>
@@ -32,11 +32,11 @@ export const Header: React.FC = () => {
           
           <View style={styles.rightSection}>
             <View style={styles.infoItem}>
-              <Ionicons name="people-outline" size={16} color="rgba(255,255,255,0.8)" />
+              <Ionicons name="team" size={16} color="rgba(255,255,255,0.8)" />
               <Text style={styles.infoText}>Team</Text>
             </View>
             <View style={styles.infoItem}>
-              <Ionicons name="calendar-outline" size={16} color="rgba(255,255,255,0.8)" />
+              <Ionicons name="calendar" size={16} color="rgba(255,255,255,0.8)" />
               <Text style={styles.infoText}>{new Date().toLocaleDateString()}</Text>
             </View>
           </View>

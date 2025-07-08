@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Modal, TextInput, Alert } from 'react-native';
-import  Ionicons  from 'react-native-vector-icons/AntDesign';
+import  Icons  from 'react-native-vector-icons/AntDesign';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Column } from '../types/kanban';
 import { useKanbanStore } from '../store/kanbanStore';
 import { KanbanCard } from './KanbanCard';
@@ -63,7 +64,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({ column }) => {
             </View>
           </View>
           <TouchableOpacity onPress={() => setShowMenu(true)} style={styles.menuButton}>
-            <Ionicons name="ellipsis-horizontal" size={20} color="#6B7280" />
+            <FontAwesomeIcon name="ellipsis-v"    size={15} color="#6B7280" />
           </TouchableOpacity>
         </View>
         
@@ -77,7 +78,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({ column }) => {
           style={styles.addCardButton}
           onPress={() => setIsAddingCard(true)}
         >
-          <Ionicons name="add" size={20} color="#6B7280" />
+          <Icons name="plus" size={20} color="#6B7280" />
           <Text style={styles.addCardText}>Add a card</Text>
         </TouchableOpacity>
       </View>
@@ -87,7 +88,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({ column }) => {
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>Add New Card</Text>
             <TouchableOpacity onPress={handleCancel}>
-              <Ionicons name="close" size={24} color="#6B7280" />
+              <Icons name="close" size={24} color="#6B7280" />
             </TouchableOpacity>
           </View>
           
@@ -159,7 +160,7 @@ export const KanbanColumn: React.FC<KanbanColumnProps> = ({ column }) => {
         >
           <View style={styles.menuModal}>
             <TouchableOpacity style={styles.menuItem} onPress={handleDeleteColumn}>
-              <Ionicons name="trash" size={20} color="#EF4444" />
+              <Icons name="delete" size={20} color="#EF4444" />
               <Text style={styles.menuItemTextDanger}>Delete Column</Text>
             </TouchableOpacity>
           </View>
